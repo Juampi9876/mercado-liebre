@@ -2,9 +2,15 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
-const publicPath = path.resolve('public');
+
 
 app.set("port",process.env.PORT || 3000)
+
+app.listen(app.get("port"),() => console.log("Server Start http://localhost:"+app.get("port")))
+
+
+const publicPath = path.resolve('public');
+
 
 app.listen(app.get("port"),() => console.log("Server Start http://localhost:"+app.get("port")))
 
@@ -28,7 +34,6 @@ app.get('/login.html', function(req, res) {
 app.post('/login', function(req, res) {
     res.send(req.body);
 });
-
 
 
 app.listen(process.env.PORT || 3000, function(){
