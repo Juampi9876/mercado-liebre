@@ -29,7 +29,7 @@ app.post('/login', function(req, res) {
     res.send(req.body);
 });
 
-app.listen(app.get("port"),() => console.log("Server Start http://localhost"+app.get("port")))
+app.listen(app.get("port"),() => console.log("Server Start http://localhost:"+app.get("port")))
 
 app.listen(process.env.PORT || 3000, function(){
     console.log('Servidor Corriendo en el puerto 3000')
